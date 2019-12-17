@@ -17,18 +17,24 @@ public class Book {
     @JoinTable(name="author_book" ,joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors =  new HashSet<>();
 
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
+    }
+
     public Book() {
     }
 
-    public Book(Long id, String title, String isbn, String publisher) {
-        this.id = id;
+    public Book(String title, String isbn, String publisher) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
     }
 
-    public Book(Long id, String title, String isbn, String publisher, Set<Author> authors) {
-        this.id = id;
+    public Book(String title, String isbn, String publisher, Set<Author> authors) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
