@@ -15,6 +15,9 @@ public class Publisher {
     String city;
     String state;
 
+    public Publisher() {
+    }
+
     @Override
     public String toString() {
         return "Publisher{" +
